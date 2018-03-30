@@ -14,7 +14,7 @@ class Features extends Component {
         return (
             <section className="features-1 text-center">
                 <div className="container">
-                    <h2>Features</h2>
+                    <h2 className="font-weight-normal">Features</h2>
                     <div className="divider"></div>
                     <div className="row">
                         <div className="col-md-4 col-feature">
@@ -23,7 +23,7 @@ class Features extends Component {
                             </div>
                             <h4>Clean Design</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus erat sed sem sagittis cursus.</p>
-                            <p><a className="btn btn-outline-info mt-2" href="" role="button">View details</a></p>
+                            <p><a className="btn btn-outline-info mt-2 font-weight-normal" href="" role="button">View details</a></p>
                         </div>
                         <div className="col-md-4 col-feature">
                             <div className="rounded-circle justify-center">
@@ -31,7 +31,7 @@ class Features extends Component {
                             </div>
                             <h4>Responsive</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus erat sed sem sagittis cursus.</p>
-                            <p><a className="btn btn-outline-info mt-2" href="" role="button">View details</a></p>
+                            <p><a className="btn btn-outline-info mt-2 font-weight-normal" href="" role="button">View details</a></p>
                         </div>
                         <div className="col-md-4 col-feature">
                             <div className="rounded-circle justify-center">
@@ -39,7 +39,7 @@ class Features extends Component {
                             </div>
                             <h4>Bootstrap 4</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus erat sed sem sagittis cursus.</p>
-                            <p><a className="btn btn-outline-info mt-2" href="" role="button">View details</a></p>
+                            <p><a className="btn btn-outline-info mt-2 font-weight-normal" href="" role="button">View details</a></p>
                         </div>
                     </div>
                 </div>

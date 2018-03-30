@@ -23,11 +23,11 @@ class Cover extends Component {
                     </h1>
                     <div className="row">
                         <div className="m-auto col-md-6 mt-5">
-                            <button type="submit" className="btn btn-lg btn-info pill-btn mt-5">You are a dev ?</button>
+                            <button type="submit" className="btn btn-lg btn-info pill-btn mt-5 font-weight-normal">Are you a dev ?</button>
                         </div>
                         <div className="m-auto col-md-6 mt-5">
-                            <button type="submit" className="btn btn-lg btn-info pill-btn mt-5">
-                            you are looking for a dev !</button>
+                            <button type="submit" className="btn btn-lg btn-info pill-btn mt-5 font-weight-normal">
+                            find your dev !</button>
                         </div>
                     </div>
                 </div>

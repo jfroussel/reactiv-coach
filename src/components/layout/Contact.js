@@ -17,7 +17,7 @@ class Contact extends Component {
                 <div className="container">
                     <div className="row contact-details">
                         <div className="col-sm-8 m-auto text-center">
-                            <h2>Contact Us</h2>
+                            <h2 className="font-weight-normal">Contact Us</h2>
                             <p className="lead constrain-width mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. At aliquam rhoncus donec magna turpis, dictum sit amet tellus at, commodo elementum sapien.</p>
                             <div className="divider"></div>
                             <h4>Ask us a question</h4>
@@ -34,7 +34,7 @@ class Contact extends Component {
                                 <div className="row">
                                     <div className="col-md-12">
                                         <textarea className="form-control-custom mb-4" rows="3">Your Message</textarea><br />
-                                        <button type="submit" className="btn btn-info btn-lg mb-4">Send Message</button>
+                                        <button type="submit" className="btn btn-info btn-lg mb-4 font-weight-normal">Send Message</button>
                                     </div> 
                                 </div>
                             </form>

@@ -42,13 +42,13 @@ class Navbar extends Component {
                                     <a className="nav-link" href="">About</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="">Our Work</a>
+                                    <a className="nav-link" href="">Your Works</a>
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link" href="">Contact</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="btn btn-outline-info btn-outline" href="">Sign in</a>
+                                    <a className="btn btn-outline-info btn-outline font-weight-normal" href="">Sign in</a>
                                 </li>
                             </ul>
                         </div>

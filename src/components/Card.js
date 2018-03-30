@@ -26,12 +26,13 @@ class Card extends Component {
                             <h5 className="card-title">Hilary doe</h5>
                             <p className="small text-muted">Category : Programming</p>
                             <p className="card-text small">Some quick example text to build on the card title and make up.</p>
+                            <hr />
                             <div className="row">
-                                <div className="col-10">
+                                <div className="col-8 text-left">
                                     <FormComponent />
                                 </div>
-                                <div className="col-2"> 
-                                <i class="fas fa-angle-down fa-3x text-info"></i>
+                                <div className="col-4 text-right">
+                                    <i className="fas fa-chevron-down fa-2x text-info align-bottom"></i>
                                 </div>
                             </div>
                         </div>

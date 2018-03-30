@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import Cover from './Cover';
+import Navbar from './Navbar';
 import Features from './Features';
 import Footer from './Footer';
 import Contact from './Contact';
+import Content from './Content';
 
 class Home extends Component {
 
@@ -17,7 +18,7 @@ class Home extends Component {
 
         return (
             <div>
-            <Cover />
+            <Navbar />
             <Features />
             <Contact />
             <Footer />

@@ -1,18 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from '../assets/logo.svg';
 import './App.css';
+import Layout from './Layout';
+import HeaderNav from './HeaderNav';
+import Sidebar from './Sidebar';
+import Content from './Content';
 
-
-class App extends Component {
-  render() {
-    return (
-      <div className="container">
-       
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to reactiv-coaching</h2>
+const App = () => (
+  <Layout>
+    <HeaderNav/>
+    <div className="row py-5">
+      <div className="col-3">
+        <Sidebar/>
       </div>
-    );
-  }
-}
+      <div className="col-9">
+        <Content/>
+      </div>
+    </div>
+  </Layout>
+);
 
 export default App;

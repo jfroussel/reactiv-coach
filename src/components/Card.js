@@ -32,7 +32,7 @@ class Card extends Component {
                                     <FormComponent />
                                 </div>
                                 <div className="col-4 text-right">
-                                    <i className="fas fa-chevron-down fa-2x text-info align-bottom"></i>
+                                    <i className="far fa-user-circle fa-2x text-info align-bottom"></i>
                                 </div>
                             </div>
                         </div>

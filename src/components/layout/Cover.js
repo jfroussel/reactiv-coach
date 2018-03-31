@@ -14,7 +14,7 @@ class Cover extends Component {
             <div className="cover-container pb-5">
                 <div className="cover-inner container">
                     <p className="lead ">
-                    The first developer platform REACTJS and REDUX</p>
+                    The first developers platform around ecosystem<br /> REACTJS and REDUX</p>
                     <div className="divider"></div>
                     <h1 className="jumbotron-heading">Say 
                         <em> hello </em>

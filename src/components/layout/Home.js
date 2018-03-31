@@ -4,7 +4,6 @@ import Developers from './Developers';
 import Features from './Features';
 import Footer from './Footer';
 import Contact from './Contact';
-import Content from './Content';
 
 class Home extends Component {
 

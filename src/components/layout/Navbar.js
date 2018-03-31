@@ -45,7 +45,7 @@ class Navbar extends Component {
                                     <a className="nav-link" href="">Your Works</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="">Contact</a>
+                                    <a className="nav-link" href="#contact">Contact</a>
                                 </li>
                                 <li className="nav-item">
                                     <a className="btn btn-outline-info btn-outline font-weight-normal" href="">Sign in</a>

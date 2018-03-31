@@ -14,7 +14,8 @@ class Features extends Component {
         return (
             <section className="features-1 text-center">
                 <div className="container">
-                    <h2 className="font-weight-normal">Features</h2>
+                    <h2 className="font-weight-light">Features</h2>
+                    <p className="lead constrain-width mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. At aliquam rhoncus donec magna turpis, dictum sit amet tellus at, commodo elementum sapien.</p>
                     <div className="divider"></div>
                     <div className="row">
                         <div className="col-md-4 col-feature">

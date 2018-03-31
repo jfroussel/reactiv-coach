@@ -44,11 +44,11 @@ class Footer extends Component {
                         </div>
                         <div className="col-md-6 text-center text-md-right mb-4">
                             <ul className="social">
-                            <span className="pr-3"><i class="fab fa-github fa-1x text-info"></i></span>
-                            <span className="pr-3"><i class="fab fa-facebook-f fa-1x text-info"></i></span>
-                            <span className="pr-3"><i class="fab fa-twitter fa-1x text-info"></i></span>
-                            <span className="pr-3"><i class="fab fa-instagram fa-1x text-info"></i></span>
-                            <span className="pr-3"><i class="fab fa-google fa-1x text-info"></i></span>
+                            <span className="pr-3"><i className="fab fa-github fa-1x text-info"></i></span>
+                            <span className="pr-3"><i className="fab fa-facebook-f fa-1x text-info"></i></span>
+                            <span className="pr-3"><i className="fab fa-twitter fa-1x text-info"></i></span>
+                            <span className="pr-3"><i className="fab fa-instagram fa-1x text-info"></i></span>
+                            <span className="pr-3"><i className="fab fa-google fa-1x text-info"></i></span>
                                 <div className="clear"></div>
                             </ul>
                         </div>

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Cover from './Cover'
 import Logo from '../../assets/logo.png'
+import SignIn from '../auth/SignIn'
 
 class Navbar extends Component {
 
@@ -54,12 +55,17 @@ class Navbar extends Component {
                                     <a className="nav-link" href="#contact">Contact</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="btn btn-outline-info btn-outline font-weight-normal" href="">Sign in</a>
+                                    <a className="btn btn-outline-info btn-outline font-weight-normal" href="" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false">Sign in</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </nav>
+                <div className="collapse pt-5" id="collapseExample">
+                    <div className="card card-body">
+                        <SignIn />
+                    </div>
+                </div>
                 <Cover />
             </section>
 

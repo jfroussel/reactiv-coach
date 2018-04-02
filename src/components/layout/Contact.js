@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
+import ScrollableAnchor, { configureAnchors  } from 'react-scrollable-anchor'
 
+configureAnchors({offset: -60, scrollDuration: 1000})
 
 class Contact extends Component {
 
@@ -13,7 +15,8 @@ class Contact extends Component {
     render() {
 
         return (
-            <section className="contact">
+            <ScrollableAnchor id={'contact'}>
+            <section className="contact pt-5">
                 <div className="container">
                     <div className="row contact-details">
                         <div className="col-sm-8 m-auto text-center">
@@ -43,6 +46,7 @@ class Contact extends Component {
                     </div>
                 </div>
             </section>
+            </ScrollableAnchor>
 
         )
     }

@@ -1,9 +1,11 @@
-import React, {Component} from 'react';
-import Navbar from './Navbar';
-import Developers from './Developers';
-import Features from './Features';
-import Footer from './Footer';
-import Contact from './Contact';
+import React, {Component} from 'react'
+import Navbar from './Navbar'
+import Developers from './Developers'
+import Features from './Features'
+import Footer from './Footer'
+import Contact from './Contact'
+import About from './About'
+import Works from './Works'
 
 class Home extends Component {
 
@@ -18,11 +20,13 @@ class Home extends Component {
 
         return (
             <div>
-            <Navbar />
-            <Developers />
-            <Features />
-            <Contact />
-            <Footer />
+                <Navbar />
+                <Features />
+                <Developers />
+                <About />
+                <Contact />
+                <Works />
+                <Footer />
             </div>
 
         )

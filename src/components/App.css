@@ -439,4 +439,14 @@ li.nav-item .btn-white {
 
 }
 
+.visit-me :hover {
+  color:cyan;
+  font: bold;
+}
+
+.works-template {
+  width: 100%;
+  height:auto;
+}
+
 

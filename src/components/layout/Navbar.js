@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import Cover from './Cover';
-import Logo from '../../assets/logo.png';
+import React, {Component} from 'react'
+import Cover from './Cover'
+import Logo from '../../assets/logo.png'
 
 class Navbar extends Component {
 
@@ -34,15 +34,21 @@ class Navbar extends Component {
                             id="navbarSupportedContent">
                             <ul className="navbar-nav mt-2 mt-md-0">
                                 <li className="nav-item active">
-                                    <a className="nav-link" href="">Home
+                                    <a className="nav-link" href="#cover">Home
                                         <span className="sr-only">(current)</span>
                                     </a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="">About</a>
+                                    <a className="nav-link" href="#features">Features</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="">Your Works</a>
+                                    <a className="nav-link" href="#developers">Developers</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#works">Works</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#about">About</a>
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link" href="#contact">Contact</a>

@@ -19,16 +19,24 @@ class Footer extends Component {
                         <div className="col-md-12">
                             <ul className="nav-footer mt-2 mt-md-0 ">
                                 <li className="nav-item active">
-                                    <a className="nav-link" href="">Home <span className="sr-only">(current)</span></a>
+                                    <a className="nav-link" href="#cover">Home
+                                        <span className="sr-only">(current)</span>
+                                    </a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="">About</a>
+                                    <a className="nav-link" href="#features">Features</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="">Our Work</a>
+                                    <a className="nav-link" href="#developers">Developers</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="">Contact</a>
+                                    <a className="nav-link" href="#works">Works</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#about">About</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#contact">Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -40,7 +48,7 @@ class Footer extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6 text-center text-md-left mt-2 mb-3 pt-1">
-                            <p>Copyright &copy; YourStartup. All rights reserved.</p>
+                            <p>Copyright 2018 &copy; jfroussel. MIT.</p>
                         </div>
                         <div className="col-md-6 text-center text-md-right mb-4">
                             <ul className="social">

@@ -25,7 +25,7 @@ class Cards extends Component {
                             <h6 className="text-muted small">Status: Freelance </h6>
                             <h6 className="text-muted small">Since: 2010 </h6>
                             <hr />
-                            <a href="" className="nav-link text-muted">Visit me</a>
+                            <a href="" className="nav-link text-info">Visit me</a>
                         </div>
                         <div className="card-profil-img">
                             <img className="card-img-top rounded-circle" src={User} alt="Card  cap" />
@@ -50,7 +50,7 @@ class Cards extends Component {
                             <h6 className="text-muted small">Status: Freelance </h6>
                             <h6 className="text-muted small">Since: 2010 </h6>
                             <hr />
-                            <a href="" className="nav-link text-muted">Visit me</a>
+                            <a href="" className="nav-link text-info">Visit me</a>
                         </div>
                         <div className="card-profil-img">
                             <img className="card-img-top rounded-circle" src={User} alt="Card  cap" />
@@ -74,7 +74,7 @@ class Cards extends Component {
                             <h6 className="text-muted small">Status: Freelance </h6>
                             <h6 className="text-muted small">Since: 2010 </h6>
                             <hr />
-                            <a href="" className="nav-link text-muted">Visit me</a>
+                            <a href="" className="nav-link text-info">Visit me</a>
                         </div>
                         <div className="card-profil-img">
                             <img className="card-img-top rounded-circle" src={User} alt="Card  cap" />

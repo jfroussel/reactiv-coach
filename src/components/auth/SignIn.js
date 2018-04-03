@@ -2,15 +2,16 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { PasswordForgetLink } from './PasswordForget'
 import { SignUpLink } from './SignUp'
-import { auth } from 'firebase'
+import { auth, firebase } from '../../firebase'
 import * as routes from '../../constants/AuthRoutes'
 import { FormControl, FormGroup, Button, Grid, Row, Col } from 'react-bootstrap'
+import ScrollableAnchor from 'react-scrollable-anchor';
 
 
 const SignInPage = ({ history }) =>
   <div>
     <Grid>
-      <Row className="d-flex justify-content-around pt-5">
+      <Row className="d-flex justify-content-around pt-5 ">
         <Col>
           <h2 className="font-weight-light">Sign In</h2>
           <SignInForm history={history} />
@@ -37,7 +38,10 @@ class SignInForm extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { ...INITIAL_STATE };
+    this.state = { 
+      ...INITIAL_STATE,
+      logged: false,
+    };
   }
 
   onSubmit = (event) => {
@@ -61,6 +65,8 @@ class SignInForm extends Component {
 
     event.preventDefault();
   }
+
+  
 
   render() {
     const {

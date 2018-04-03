@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import Cover from './Cover'
 import Logo from '../../assets/logo.png'
 import SignIn from '../auth/SignIn'
+import ScrollableAnchor from 'react-scrollable-anchor/lib/ScrollableAnchor';
 
 class Navbar extends Component {
 
@@ -14,6 +15,7 @@ class Navbar extends Component {
     render() {
 
         return (
+            <ScrollableAnchor id={'home'}>
             <section className="cover-5 text-center">
                 <nav className="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
                     <div className="container">
@@ -31,11 +33,12 @@ class Navbar extends Component {
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         <div
+
                             className="collapse navbar-collapse pull-xs-right justify-content-end"
                             id="navbarSupportedContent">
                             <ul className="navbar-nav mt-2 mt-md-0">
                                 <li className="nav-item active">
-                                    <a className="nav-link" href="#cover">Home
+                                    <a className="nav-link" href="#home">Home
                                         <span className="sr-only">(current)</span>
                                     </a>
                                 </li>
@@ -55,12 +58,19 @@ class Navbar extends Component {
                                     <a className="nav-link" href="#contact">Contact</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="btn btn-outline-info btn-outline font-weight-normal" href="" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false">Sign in</a>
+                                    <a 
+                                        className="btn btn-outline-info btn-outline font-weight-normal" 
+                                        href="#home" 
+                                        data-toggle="collapse" 
+                                        data-target="#collapseExample" 
+                                        aria-expanded="false">Sign in
+                                    </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </nav>
+                
                 <div className="collapse pt-5" id="collapseExample">
                     <div className="card card-body">
                         <SignIn />
@@ -68,6 +78,7 @@ class Navbar extends Component {
                 </div>
                 <Cover />
             </section>
+            </ScrollableAnchor>
 
         )
     }

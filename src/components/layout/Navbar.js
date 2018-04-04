@@ -3,16 +3,34 @@ import Cover from './Cover'
 import Logo from '../../assets/logo.png'
 import SignIn from '../auth/SignIn'
 import ScrollableAnchor from 'react-scrollable-anchor/lib/ScrollableAnchor';
+import firebase  from 'firebase'
 
 class Navbar extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            signStatus:'Sign in',
+            welcome:'',
+        }
     }
 
+    componentWillReceiveProps() {
+       
+        const user = firebase.auth().currentUser;
+        if (user) {
+            this.setState ({
+                signStatus : 'Sign out',
+                welcome:'You are now logged ' + user.email
+            })
+            
+        } else {
+            this.setState ({signStatus : 'Sign in'})
+        }
+    }
 
     render() {
+        
 
         return (
             <ScrollableAnchor id={'home'}>
@@ -32,8 +50,10 @@ class Navbar extends Component {
                             aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
+                        <span className="navbar-text">
+                            {this.state.welcome}
+                        </span>
                         <div
-
                             className="collapse navbar-collapse pull-xs-right justify-content-end"
                             id="navbarSupportedContent">
                             <ul className="navbar-nav mt-2 mt-md-0">
@@ -62,16 +82,17 @@ class Navbar extends Component {
                                         className="btn btn-outline-info btn-outline font-weight-normal" 
                                         href="#home" 
                                         data-toggle="collapse" 
-                                        data-target="#collapseExample" 
-                                        aria-expanded="false">Sign in
+                                        data-target="#collapseExample"
+                                        aria-expanded="false">
+                                        {this.state.signStatus}
+                                        
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </nav>
-                
-                <div className="collapse pt-5" id="collapseExample">
+                <div className="collapse" id="collapseExample">
                     <div className="card card-body">
                         <SignIn />
                     </div>

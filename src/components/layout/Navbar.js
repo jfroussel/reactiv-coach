@@ -3,7 +3,8 @@ import Cover from './Cover'
 import Logo from '../../assets/logo.png'
 import SignIn from '../auth/SignIn'
 import ScrollableAnchor from 'react-scrollable-anchor/lib/ScrollableAnchor';
-import firebase  from 'firebase'
+import { auth, firebase } from '../../firebase'
+
 
 class Navbar extends Component {
 
@@ -12,33 +13,51 @@ class Navbar extends Component {
         this.state = {
             signStatus:'Sign in',
             welcome:'',
+            user: false
         }
+        this.signout = this.signout.bind(this)
+
+        
     }
 
     componentWillReceiveProps() {
-       
-        const user = firebase.auth().currentUser;
+        const user = auth.currentUser()
         if (user) {
             this.setState ({
                 signStatus : 'Sign out',
-                welcome:'You are now logged ' + user.email
+                welcome:'You are now logged ' + user.email,
+                user: true
             })
+            //console.log(this.state.user)
             
         } else {
-            this.setState ({signStatus : 'Sign in'})
+            this.setState ({
+                signStatus : 'Sign in',
+                welcome: '',
+                user: false
+            })
+            //console.log(this.state.user)
         }
     }
 
+    signout() {
+        firebase.auth.signOut()
+    }
+   
+    
+    
+
+
     render() {
         
-
+       
         return (
             <ScrollableAnchor id={'home'}>
             <section className="cover-5 text-center">
                 <nav className="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
                     <div className="container">
                         <a className="navbar-brand pt-2" href="">
-                        <img src={Logo} width="250"  alt=""/>
+                        <img src={Logo} width="250"  alt="" onClick={this.signout}/>
                         </a>
                         <button
                             className="navbar-toggler"
@@ -80,12 +99,11 @@ class Navbar extends Component {
                                 <li className="nav-item">
                                     <a 
                                         className="btn btn-outline-info btn-outline font-weight-normal" 
-                                        href="#home" 
+                                        href="#home"
                                         data-toggle="collapse" 
                                         data-target="#collapseExample"
                                         aria-expanded="false">
                                         {this.state.signStatus}
-                                        
                                     </a>
                                 </li>
                             </ul>
@@ -94,7 +112,7 @@ class Navbar extends Component {
                 </nav>
                 <div className="collapse" id="collapseExample">
                     <div className="card card-body">
-                        <SignIn />
+                        {this.state.user ? null  : <SignIn /> }
                     </div>
                 </div>
                 <Cover />

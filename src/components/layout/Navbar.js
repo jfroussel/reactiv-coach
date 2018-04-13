@@ -1,9 +1,11 @@
 import React, {Component} from 'react'
 import Cover from './Cover'
 import Logo from '../../assets/logo.png'
-import SignIn from '../auth/SignIn'
 import ScrollableAnchor from 'react-scrollable-anchor/lib/ScrollableAnchor';
-import { auth, firebase } from '../../firebase'
+import { auth } from '../../firebase'
+import { doSignOut } from '../../firebase/auth'
+import AuthPage from './AuthPage'
+
 
 
 class Navbar extends Component {
@@ -15,9 +17,6 @@ class Navbar extends Component {
             welcome:'',
             user: false
         }
-        this.signout = this.signout.bind(this)
-
-        
     }
 
     componentWillReceiveProps() {
@@ -28,36 +27,27 @@ class Navbar extends Component {
                 welcome:'You are now logged ' + user.email,
                 user: true
             })
-            //console.log(this.state.user)
-            
         } else {
             this.setState ({
                 signStatus : 'Sign in',
                 welcome: '',
                 user: false
             })
-            //console.log(this.state.user)
         }
     }
-
-    signout() {
-        firebase.auth.signOut()
-    }
    
-    
-    
-
-
+   
+   
+   
     render() {
-        
-       
+
         return (
             <ScrollableAnchor id={'home'}>
             <section className="cover-5 text-center">
                 <nav className="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
                     <div className="container">
                         <a className="navbar-brand pt-2" href="">
-                        <img src={Logo} width="250"  alt="" onClick={this.signout}/>
+                        <img src={Logo} width="250"  alt="" onClick={doSignOut}/>
                         </a>
                         <button
                             className="navbar-toggler"
@@ -94,31 +84,31 @@ class Navbar extends Component {
                                     <a className="nav-link" href="#about">About</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#contact">Contact</a>
+                                    <a className="nav-link"  onClick={doSignOut} href="#contact">Contact</a>
                                 </li>
                                 <li className="nav-item">
                                     <a 
                                         className="btn btn-outline-info btn-outline font-weight-normal" 
                                         href="#home"
                                         data-toggle="collapse" 
-                                        data-target="#collapseExample"
-                                        aria-expanded="false">
-                                        {this.state.signStatus}
+                                        data-target="#collapse"
+                                        aria-expanded="false"
+                                        >
+                                         {this.state.signStatus}
                                     </a>
                                 </li>
-                            </ul>
+                            </ul>                          
                         </div>
                     </div>
                 </nav>
-                <div className="collapse" id="collapseExample">
-                    <div className="card card-body">
-                        {this.state.user ? null  : <SignIn /> }
+                <div className="collapse" id="collapse">
+                    <div className="card card-body"> 
+                        {this.state.user ? null  : <AuthPage /> }
                     </div>
                 </div>
                 <Cover />
             </section>
             </ScrollableAnchor>
-
         )
     }
 }

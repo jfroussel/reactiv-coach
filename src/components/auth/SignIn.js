@@ -12,7 +12,7 @@ const SignInPage = ({ history }) =>
     <Grid>
       <Row className="d-flex justify-content-around pt-5 ">
         <Col className="pt-5">
-          <h2 className="font-weight-light">Sign In</h2>
+          <h3 className="font-weight-light">Sign In</h3>
           <SignInForm history={history} />
           <br />
           <PasswordForgetLink />

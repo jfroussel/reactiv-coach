@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { FormControl, FormGroup, Button, Grid, Row, Col } from 'react-bootstrap';
-import { auth } from 'firebase';
+import { auth } from '../../firebase';
 
 const PasswordForgetPage = () =>
   <div>
     <Grid>
-      <Row className="show-grid">
-        <Col xs={3} xsOffset={9}>
-          <h1>PasswordForget</h1>
+      <Row className="d-flex justify-content-around pt-5 ">
+        <Col className="pt-5">
+          <h3 className="font-weight-light">Password forget</h3>
           <PasswordForgetForm />
         </Col>
       </Row>
@@ -63,7 +63,7 @@ class PasswordForgetForm extends Component {
             placeholder="Email Address"
         />
         </FormGroup>
-        <Button disabled={isInvalid} type="submit">
+        <Button disabled={isInvalid} type="submit" bsStyle="info">
           Reset My Password
         </Button>
 

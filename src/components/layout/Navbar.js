@@ -10,10 +10,7 @@ class Navbar extends Component {
         super(props);
         this.state = {}
     }
-
-
     render() {
-
         return (
             <ScrollableAnchor id={'home'}>
             <section className="cover-5 text-center">

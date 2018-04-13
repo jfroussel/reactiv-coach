@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import SignIn from '../auth/SignIn'
-import SignOut from '../auth/SignOut'
 import SignUp from '../auth/SignUp'
 import PasswordForget from '../auth/PasswordForget'
 
@@ -17,7 +16,6 @@ class AuthPage extends Component {
         return (
             <div>
                 <SignIn />
-                <SignOut />
                 <SignUp />
                 <PasswordForget />
             </div>

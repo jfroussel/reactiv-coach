@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
+import { Grid, Row, Col } from 'react-bootstrap';
 
-import { auth } from '../firebase';
+
+import { auth } from '../../firebase';
+
+const PasswordChangePage = () =>
+  <div>
+    <Grid>
+      <Row className="d-flex justify-content-around pt-5 ">
+        <Col className="pt-5">
+          <h3 className="font-weight-light">Password change</h3>
+          <PasswordChangeForm />
+        </Col>
+      </Row>
+    </Grid>    
+  </div>
 
 const byPropKey = (propertyName, value) => () => ({
   [propertyName]: value,
@@ -45,6 +59,7 @@ class PasswordChangeForm extends Component {
       passwordOne === '';
 
     return (
+
       <form onSubmit={this.onSubmit}>
         <input
           value={passwordOne}
@@ -68,4 +83,8 @@ class PasswordChangeForm extends Component {
   }
 }
 
-export default PasswordChangeForm;
+export default PasswordChangePage;
+
+export {
+  PasswordChangeForm
+}

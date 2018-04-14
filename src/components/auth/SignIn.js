@@ -2,18 +2,17 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { PasswordForgetLink } from './PasswordForget'
 import { SignUpLink } from './SignUp'
-import { auth, firebase } from '../../firebase'
+import { auth } from '../../firebase'
 import * as routes from '../../constants/AuthRoutes'
 import { FormControl, FormGroup, Button, Grid, Row, Col } from 'react-bootstrap'
-import ScrollableAnchor from 'react-scrollable-anchor';
 
 
 const SignInPage = ({ history }) =>
   <div>
     <Grid>
       <Row className="d-flex justify-content-around pt-5 ">
-        <Col>
-          <h2 className="font-weight-light">Sign In</h2>
+        <Col className="pt-5">
+          <h3 className="font-weight-light">Sign In</h3>
           <SignInForm history={history} />
           <br />
           <PasswordForgetLink />
@@ -28,17 +27,19 @@ const byPropKey = (propertyName, value) => () => ({
   [propertyName]: value,
 });
 
-const INITIAL_STATE = {
+const INITIAL_STATE =  {
   email: '',
   password: '',
   error: null,
 };
 
+
+
 class SignInForm extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { 
+    this.state =  { 
       ...INITIAL_STATE,
       logged: false,
     };
@@ -58,6 +59,7 @@ class SignInForm extends Component {
       .then(() => {
         this.setState(() => ({ ...INITIAL_STATE }));
         history.push(routes.HOME);
+        
       })
       .catch(error => {
         this.setState(byPropKey('error', error));

@@ -7,6 +7,7 @@ import * as routes from '../../constants/AuthRoutes'
 import { FormControl, FormGroup, Button, Grid, Row, Col } from 'react-bootstrap'
 
 
+
 const SignInPage = ({ history }) =>
   <div>
     <Grid>
@@ -31,6 +32,7 @@ const INITIAL_STATE =  {
   email: '',
   password: '',
   error: null,
+  
 };
 
 
@@ -38,10 +40,11 @@ const INITIAL_STATE =  {
 class SignInForm extends Component {
   constructor(props) {
     super(props);
-
+    
     this.state =  { 
       ...INITIAL_STATE,
       logged: false,
+     
     };
   }
 
@@ -80,6 +83,7 @@ class SignInForm extends Component {
     const isInvalid =
       password === '' ||
       email === '';
+
 
     return (
       

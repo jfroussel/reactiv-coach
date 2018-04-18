@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { FormControl, FormGroup, Button, Grid, Row, Col } from 'react-bootstrap';
 import { auth } from '../../firebase';
 
+
+
+
 const PasswordForgetPage = () =>
   <div>
     <Grid>
@@ -22,13 +25,17 @@ const byPropKey = (propertyName, value) => () => ({
 const INITIAL_STATE = {
   email: '',
   error: null,
+  
 };
 
 class PasswordForgetForm extends Component {
   constructor(props) {
     super(props);
-
-    this.state = { ...INITIAL_STATE };
+    console.log(props)
+    this.state = { 
+      ...INITIAL_STATE,
+      
+    };
   }
 
   onSubmit = (event) => {
@@ -46,10 +53,13 @@ class PasswordForgetForm extends Component {
   }
 
   render() {
+   
     const {
       email,
       error,
     } = this.state;
+
+    
 
     const isInvalid = email === '';
 
@@ -73,9 +83,12 @@ class PasswordForgetForm extends Component {
   }
 }
 
+
+
+
 const PasswordForgetLink = () =>
   <p>
-    <Link to="/pw-forget" className="link">Forgot Password?</Link>
+    <Link to="/pw-forget" className="link" >Forgot Password?</Link>
   </p>
 
 export default PasswordForgetPage;

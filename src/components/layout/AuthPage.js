@@ -16,8 +16,7 @@ class AuthPage extends Component {
         return (
             <div>
                 <SignIn />
-                <SignUp />
-                <PasswordForget />
+               
             </div>
         )
     }

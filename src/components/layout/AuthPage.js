@@ -14,13 +14,12 @@ class AuthPage extends Component {
         }
     }
 
-    componentWillMount() {
-        console.log(this.state)
-    }
 
     render() {
+        
         return (
             <div>
+                
                 {this.state.passwordForgetStatus || this.state.signupStatus ? null : <SignIn />} 
                 {!this.state.passwordForgetStatus ? null : <PasswordForget status={this.state.passwordForgetStatus}/>}
                 {!this.state.signupStatus ? null : <SignUp status={this.state.signupStatus} />}

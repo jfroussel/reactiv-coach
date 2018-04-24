@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { FormControl, FormGroup, Button, Grid, Row, Col } from 'react-bootstrap';
 import { auth } from '../../firebase';
-
-
-
 
 const PasswordForgetPage = () =>
   <div>
@@ -34,7 +30,6 @@ class PasswordForgetForm extends Component {
     console.log(props)
     this.state = { 
       ...INITIAL_STATE,
-      
     };
   }
 
@@ -84,16 +79,8 @@ class PasswordForgetForm extends Component {
 }
 
 
-
-
-const PasswordForgetLink = () =>
-  <p>
-    <Link to="/pw-forget" className="link" >Forgot Password?</Link>
-  </p>
-
 export default PasswordForgetPage;
 
 export {
   PasswordForgetForm,
-  PasswordForgetLink,
 };

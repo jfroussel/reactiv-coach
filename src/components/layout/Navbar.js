@@ -5,6 +5,9 @@ import ScrollableAnchor from 'react-scrollable-anchor/lib/ScrollableAnchor';
 import { auth } from '../../firebase'
 import { doSignOut } from '../../firebase/auth'
 import AuthPage from './AuthPage'
+import Private from './Private'
+import { PrivateNavigation, PublicNavigation } from './Navigation'
+
 
 
 
@@ -26,32 +29,33 @@ class Navbar extends Component {
             console.log(`Component will mount : no user connected`)
         }
     }
+
     componentWillReceiveProps() {
         const user = auth.currentUser()
         if (user) {
             this.setState({
                 signStatus: 'sign out',
-                user: true
+                user: true,
             })
-            console.log(`Component will received props : user ${user.email} is connected`)
         } else {
             this.setState({
                 signStatus: 'sign in',
                 user: false
             })
-
-            console.log(`Component will received props : no user connected`)
         }
     }
 
+
+
     render() {
+
         return (
             <ScrollableAnchor id={'home'}>
                 <section className="cover-5 text-center">
                     <nav className="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
                         <div className="container">
                             <a className="navbar-brand pt-2" href="">
-                                <img src={Logo} width="250" alt="" onClick={doSignOut} />
+                                <img src={Logo} width="250" alt="" />
                             </a>
                             <button
                                 className="navbar-toggler"
@@ -63,32 +67,12 @@ class Navbar extends Component {
                                 aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon"></span>
                             </button>
-
                             <div
                                 className="collapse navbar-collapse pull-xs-right justify-content-end"
                                 id="navbarSupportedContent">
                                 <ul className="navbar-nav mt-2 mt-md-0">
-                                    <li className="nav-item active">
-                                        <a className="nav-link" href="#home">Home
-                                        <span className="sr-only">(current)</span>
-                                        </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#features">Features</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#developers">Developers</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#works">Works</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#about">About</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#contact">Contact</a>
-                                    </li>
-                                    
+                                    {!this.state.user ? <PublicNavigation /> : <PrivateNavigation />}
+
                                     {!this.state.user ?
 
                                         <li className="nav-item">
@@ -101,21 +85,21 @@ class Navbar extends Component {
                                             >{this.state.signStatus}</a>
                                         </li>
                                         :
-                                        null                                   
+                                        null
                                     }
-                                    {this.state.user ? 
-                                    <li className="nav-item dropdown pl-5">
-                                        <a className="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i className="fas fa-user-circle text-info fa-2x"></i>
-                                        </a>
-                                        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a className="dropdown-item" href="">Action</a>
-                                            <a className="dropdown-item" href="">Another action</a>
-                                            <div className="dropdown-divider"></div>
-                                            <a className="dropdown-item" href="" onClick={doSignOut}>{this.state.signStatus}</a>
-                                        </div>
-                                    </li> : null }
-                                    
+                                    {this.state.user ?
+                                        <li className="nav-item dropdown pl-5">
+                                            <a className="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i className="fas fa-user-circle text-info fa-2x"></i>
+                                            </a>
+                                            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <a className="dropdown-item" >Documentation</a>
+                                                <a className="dropdown-item" >Help center</a>
+
+                                                <div className="dropdown-divider"></div>
+                                                <a className="dropdown-item" href="" onClick={doSignOut}>{this.state.signStatus}</a>
+                                            </div>
+                                        </li> : null}
                                 </ul>
                             </div>
                         </div>
@@ -125,7 +109,8 @@ class Navbar extends Component {
                             {auth.currentUser() ? null : <AuthPage />}
                         </div>
                     </div>
-                    <Cover />
+                    {!auth.currentUser() && <Cover />}
+                    {auth.currentUser() && <Private />}
                 </section>
             </ScrollableAnchor>
         )

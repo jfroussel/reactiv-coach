@@ -6,6 +6,7 @@ import Footer from './Footer'
 import Contact from './Contact'
 import About from './About'
 import Works from './Works'
+import {auth} from '../../firebase'
 
 class Home extends Component {
 
@@ -21,14 +22,17 @@ class Home extends Component {
         return (
             <div>
                 <Navbar />
-                <Features />
-                <Developers />
-                <About />
-                <Contact />
-                <Works />
-                <Footer />
+                {!auth.currentUser() &&
+                <div>
+                    <Features />
+                    <Developers />
+                    <About />
+                    <Contact />
+                    <Works />
+                    <Footer />
+                </div>
+                }
             </div>
-
         )
     }
 }

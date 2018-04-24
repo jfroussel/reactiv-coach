@@ -1,12 +1,18 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
-import { PasswordForgetLink } from './PasswordForget'
+import { withRouter, Link } from 'react-router-dom'
 import { SignUpLink } from './SignUp'
 import { auth } from '../../firebase'
 import * as routes from '../../constants/AuthRoutes'
 import { FormControl, FormGroup, Button, Grid, Row, Col } from 'react-bootstrap'
 
 
+  
+
+
+const PasswordForgetLink = () =>
+  <p>
+    <Link to="/pw-forget" className="link" >Forgot Password?</Link>
+  </p>
 
 const SignInPage = ({ history }) =>
   <div>
@@ -43,8 +49,7 @@ class SignInForm extends Component {
     
     this.state =  { 
       ...INITIAL_STATE,
-      logged: false,
-     
+      logged: false,  
     };
   }
 

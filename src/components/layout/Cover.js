@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import ScrollableAnchor, {   } from 'react-scrollable-anchor'
-
+import React, { Component } from 'react';
+import ScrollableAnchor, { } from 'react-scrollable-anchor'
+import firebase from 'firebase'
 
 class Cover extends Component {
 
@@ -8,10 +8,19 @@ class Cover extends Component {
         super(props);
         this.state = {
             btnDev: 'Are you a dev ?',
-            btnFindDev: 'Find a dev  !'
+            btnFindDev: 'Find a dev  !',
+            userName: '',
+            userEmail: '',
         }
     }
 
+    componentWillReceiveProps() {
+        let user = firebase.auth().currentUser;
+
+        if (user != null) {
+            this.setState({ userEmail: user.email })
+        }
+    }
 
     render() {
 
@@ -20,11 +29,12 @@ class Cover extends Component {
                 <section className="cover-container pb-5 text-center">
                     <div className="cover-inner container">
                         <p className="lead ">
-                        The first developers platform around ecosystem<br /> REACTJS and REDUX</p>
+                            The first developers platform around ecosystem<br /> REACTJS and REDUX</p>
+                        <p className="lead">{this.state.userEmail}</p>
                         <div className="divider"></div>
-                        <h1 className="jumbotron-heading">Say 
+                        <h1 className="jumbotron-heading">Say
                             <em> hello </em>
-                                to your
+                            to your
                             <strong>Apps</strong>
                         </h1>
                         <div className="row">

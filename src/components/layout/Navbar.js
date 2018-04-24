@@ -5,7 +5,7 @@ import ScrollableAnchor from 'react-scrollable-anchor/lib/ScrollableAnchor';
 import { auth } from '../../firebase'
 import { doSignOut } from '../../firebase/auth'
 import AuthPage from './AuthPage'
-import Private from './Private'
+import MemberHome from './member/MemberHome'
 import { PrivateNavigation, PublicNavigation } from './Navigation'
 
 
@@ -90,7 +90,7 @@ class Navbar extends Component {
                                     {this.state.user ?
                                         <li className="nav-item dropdown pl-5">
                                             <a className="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i className="fas fa-user-circle text-info fa-2x"></i>
+                                                <i className="fas fa-user-circle text-info fa-2x avatar"></i>
                                             </a>
                                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                                 <a className="dropdown-item" >Documentation</a>
@@ -110,7 +110,7 @@ class Navbar extends Component {
                         </div>
                     </div>
                     {!auth.currentUser() && <Cover />}
-                    {auth.currentUser() && <Private />}
+                    {auth.currentUser() && <MemberHome />}
                 </section>
             </ScrollableAnchor>
         )

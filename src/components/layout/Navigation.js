@@ -1,4 +1,5 @@
 import React from 'react'
+import {auth} from '../../firebase'
 
 const PublicNavigation = () =>
     <div className="navbar-nav">
@@ -13,10 +14,8 @@ const PublicNavigation = () =>
 
 const PrivateNavigation = () =>
     <div className="navbar-nav">
-        <a className="nav-item nav-link active" href="">Account <span className="sr-only">(current)</span></a>
-        <a className="nav-item nav-link" href="">Profile</a>
-        <a className="nav-item nav-link" href="">Messages</a>
-        <a className="nav-item nav-link" href="">Analytic</a>
+        <a className="nav-item nav-link"> <em>you are now connected</em><span className="text-info">  { auth.currentUser().email }</span></a>
+       
     </div>
 
 export {

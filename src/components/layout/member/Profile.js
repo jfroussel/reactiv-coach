@@ -2,10 +2,10 @@ import React from 'react';
 
 
 const Profile = () =>
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Member Profile</h5>
-            <a href="#" class="btn btn-info">Update profile</a>    
+    <div className="card">
+        <div className="card-body">
+            <h5 className="card-title">Member Profile</h5>
+            <a href="/" className="btn btn-info">Update profile</a>    
         </div>
     </div> 
     

@@ -15,8 +15,6 @@ class Navbar extends Component {
 
         super(props);
         this.state = {
-            signStatus: 'sign in',
-            user: false,
             isLogged: false,
         }
     }
@@ -99,7 +97,7 @@ class Navbar extends Component {
                         </div>
                     </div>
                     <div>
-                        <MemberHome />
+                        {!this.state.isLogged ? <Cover /> : <MemberHome />}
                     </div>    
                 </section>
             </ScrollableAnchor>
@@ -107,4 +105,4 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar;
+export default Navbar

@@ -6,15 +6,22 @@ import Footer from './Footer'
 import Contact from './Contact'
 import About from './About'
 import Works from './Works'
-import {auth} from '../../firebase'
+import firebase from 'firebase'
 
 class Home extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-
+            isLogged: false
         }
+    }
+
+    componentWillMount() {
+        firebase.auth().onAuthStateChanged((user) => {
+            user ? this.setState({isLogged: true}) : this.setState({isLogged: false})
+            
+        });
     }
 
     render() {
@@ -22,7 +29,7 @@ class Home extends Component {
         return (
             <div>
                 <Navbar />
-                {!auth.currentUser() &&
+                {!this.state.isLogged &&
                 <div>
                     <Features />
                     <Developers />

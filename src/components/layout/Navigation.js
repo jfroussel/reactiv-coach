@@ -1,5 +1,5 @@
 import React from 'react'
-import {auth} from '../../firebase'
+import { auth } from '../../firebase'
 
 const PublicNavigation = () =>
     <div className="navbar-nav">
@@ -10,12 +10,11 @@ const PublicNavigation = () =>
         <a className="nav-item nav-link" href="#about">About</a>
         <a className="nav-item nav-link" href="#contact">Contact</a>
     </div>
-    
+
 
 const PrivateNavigation = () =>
     <div className="navbar-nav">
-        <a className="nav-item nav-link"> <em>you are now connected</em><span className="text-info">  { auth.currentUser().email }</span></a>
-       
+        <a className="nav-item nav-link"> <em>you are now connected</em><span className="text-info">  {auth.currentUser().email}</span></a>
     </div>
 
 export {

@@ -1,0 +1,32 @@
+{
+  "members" : {
+    "-LAwSlTTQ_1jEzjUraVU" : {
+      "city" : "clamart",
+      "country" : "france",
+      "email" : "jfroussel75@gmail.com",
+      "firstName" : "roussel",
+      "id" : "wlHCYxq545duf60ObYEPLhqhVqJ3",
+      "lastName" : "jeff"
+    },
+    "0LuDWDp5oghlUjBijIIlvLOiDV02" : {
+      "-LAwUVW7FCTvGiT0TVMj" : {
+        "city" : "dd",
+        "country" : "ddd",
+        "email" : "toto@free.fr",
+        "firstName" : "dddd",
+        "id" : "0LuDWDp5oghlUjBijIIlvLOiDV02",
+        "lastName" : "ddd"
+      }
+    },
+    "wlHCYxq545duf60ObYEPLhqhVqJ3" : {
+      "-LAxDBYX-4IOo2YCxYY0" : {
+        "city" : "PARIS",
+        "country" : "France",
+        "email" : "jfroussel75@gmail.com",
+        "firstName" : "roussl",
+        "id" : "wlHCYxq545duf60ObYEPLhqhVqJ3",
+        "lastName" : "jeffy"
+      }
+    }
+  }
+}

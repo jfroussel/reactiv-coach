@@ -1,7 +1,6 @@
 import React from 'react';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import firebase from 'firebase';
-//import './FirebaseConfig'
 import './Auth.css'
 
 
@@ -41,7 +40,10 @@ class Auth extends React.Component {
     render() {
         if (!this.state.isSignedIn) {
             return (
-                <div>
+                <div className="pt-5">
+                    <h2 className="font-weight-light">Sign in or Sign up</h2>
+                    <p className="lead constrain-width mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. At aliquam rhoncus donec magna turpis, dictum sit amet tellus at, commodo elementum sapien.</p>
+                            
                     <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()} />
                 </div>
             );

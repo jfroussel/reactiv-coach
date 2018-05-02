@@ -8,12 +8,12 @@ class Profile extends Component {
         super(props)
 
         this.state = {
-            id:'',
+            isLogged: false,
+            user: [],
+            id: '',
             displayName: '',
             photoURL: null,
-            defaultPhoto: 'https://avatars1.githubusercontent.com/u/6781828?s=64&v=4',
-            firstName: '',
-            lastName: '',
+            defaultPhoto: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPB41ZQKuFDiWdacaKqDJFj_uZ1KmUJzz_J4thYhgpGAVbMP08',
             email: '',
             city: '',
             country: '',
@@ -30,15 +30,24 @@ class Profile extends Component {
     }
 
     componentDidMount() {
-       
-        firebase.auth().onAuthStateChanged((user) => {
-            this.setState({id:user.uid, email:user.email, displayName:user.displayName, photoURL:user.photoURL})
-            user.updateProfile({
-                displayName: this.state.displayName,
-                photoURL: this.state.photoURL
-            })
-        })
+        const user = firebase.auth().currentUser;
+        if (user) {
+            this.setState(
+                {
+                    isLogged: true,
+                    user: user,
+                    id: user.uid,
+                    email: user.email,
+                    displayName: user.displayName,
+                    city: '',
+                    country: '',
+                }
+            )
+        } else {
+            this.setState({ isLogged: false })
+        }
     }
+
 
     handleChange(e) {
         this.setState({
@@ -52,35 +61,32 @@ class Profile extends Component {
             .database()
             .ref('members/' + this.state.id)
         const item = {
-            id:this.state.id,
             displayName: this.state.displayName,
             photoURL: this.state.photoURL,
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
             email: this.state.email,
             city: this.state.city,
             country: this.state.country,
 
         }
-        itemsRef.push(item);
+        itemsRef.set(item);
         this.setState({
-            id: '',
-            displayName: '',
-            photoURL: '',
-            firstName: '',
-            lastName: '',
-            email: '',
-            city: '',
-            country: '',
+            displayName: this.setState.displayName,
+            photoURL: this.setState.photoURL,
+            email: this.setState.email,
+            city: this.setState.city,
+            country: this.setState.country,
         });
     }
 
     render() {
-         return(
+        const user = this.state.user
+
+        return (
             <div className="card">
                 <div className="card-body">
                     <h5 className="card-title text-center">Member Profile</h5>
-                    <img src={this.state.photoURL ? this.state.photoURL : this.state.defaultPhoto } alt="avatar" className="img-thumbnail" /> 
+                    <img className="rounded-circle" src={user.photoURL ? user.photoURL : this.state.defaultPhoto} alt="" width="100px" />
+
                     <form onSubmit={this.handleSubmit}>
                         <div className="form-group row">
                             <label htmlFor="id" className="col-sm-2 col-form-label">User ID</label>
@@ -91,8 +97,7 @@ class Profile extends Component {
                                     className="form-control"
                                     disabled
                                     placeholder="userId"
-                                    onChange={this.handleChange}
-                                    value= {this.state.id}  />
+                                    value={this.state.id} />
                             </div>
                         </div>
                         <div className="form-group row">
@@ -104,8 +109,8 @@ class Profile extends Component {
                                     className="form-control"
                                     placeholder="display name"
                                     onChange={this.handleChange}
-                                    value= { this.state.displayName }  />
-                            </div>        
+                                    value={user.displayName ? user.displayName : this.state.displayName} />
+                            </div>
                         </div>
                         <div className="form-group row">
                             <label className="col-sm-2 col-form-label">Photo URL</label>
@@ -116,31 +121,7 @@ class Profile extends Component {
                                     className="form-control"
                                     placeholder="photo URL"
                                     onChange={this.handleChange}
-                                    value= {this.state.photoURL ? this.state.photoURL : this.state.defaultPhoto }  />
-                            </div>
-                        </div>
-                        <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">First name</label>
-                            <div className="col-sm-10">
-                                <input
-                                    type="text"
-                                    name="firstName"
-                                    className="form-control"
-                                    placeholder="firstName"
-                                    onChange={this.handleChange}
-                                    value={this.state.firstName}/>
-                            </div>
-                        </div>
-                        <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Last name</label>
-                            <div className="col-sm-10">
-                                <input
-                                    type="text"
-                                    name="lastName"
-                                    className="form-control"
-                                    placeholder="lastName"
-                                    onChange={this.handleChange}
-                                    value={this.state.lastName}/>
+                                    value={user.photoURL ? user.photoURL : this.state.defaultPhoto} />
                             </div>
                         </div>
                         <div className="form-group row">
@@ -152,7 +133,7 @@ class Profile extends Component {
                                     className="form-control"
                                     placeholder="Email"
                                     onChange={this.handleChange}
-                                    value={this.state.email}/>
+                                    value={user.email ? user.email : this.state.email} />
                             </div>
                         </div>
                         <div className="form-group row">
@@ -164,7 +145,7 @@ class Profile extends Component {
                                     className="form-control"
                                     placeholder="City"
                                     onChange={this.handleChange}
-                                    value={this.state.city}/>
+                                    value={this.state.city} />
                             </div>
                         </div>
                         <div className="form-group row">
@@ -176,13 +157,13 @@ class Profile extends Component {
                                     className="form-control"
                                     placeholder="Country"
                                     onChange={this.handleChange}
-                                    value={this.state.country}/>
+                                    value={this.state.country} />
                             </div>
                         </div>
                         <button className="btn btn-info">Update profile</button>
-                    </form>  
+                    </form>
                 </div>
-            </div> 
+            </div>
         )
     }
 }

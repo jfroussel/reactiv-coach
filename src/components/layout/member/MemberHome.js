@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import {  BrowserRouter as Router, Route} from 'react-router-dom';
-import {auth} from '../../../firebase'
 import firebase from 'firebase'
 import * as routes from '../../../constants/AuthRoutes'
-import Account from './Account'
+import Home from './Home'
 import Profile from './Profile'
-import Messages from './Messages'
-import Analytic from './Analytic'
+import Network from './Network'
 import MemberSidebar from './MemberSidebar'
 
 
@@ -38,8 +36,8 @@ class MemberHome extends Component {
                         </div>
                         <div className="col-9">
                         <Route 
-                            exact path={routes.ACCOUNT}
-                            component={() => <Account />}
+                            exact path={routes.HOME_PROFILE}
+                            component={() => <Home />}
                                  
                         />
                         <Route 
@@ -48,13 +46,8 @@ class MemberHome extends Component {
                                  
                         />
                         <Route 
-                            exact path={routes.MESSAGES}
-                            component={() => <Messages />}
-                                 
-                        />
-                        <Route 
-                            exact path={routes.ANALYTIC}
-                            component={() => <Analytic />}
+                            exact path={routes.NETWORK}
+                            component={() => <Network />}
                                  
                         />
                         </div>

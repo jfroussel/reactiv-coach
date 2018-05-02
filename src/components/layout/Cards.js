@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Paris from '../../assets/paris.jpeg';
 import Nyc from '../../assets/nyc.png';
 import Quebec from '../../assets/quebec.jpeg';
-import User from '../../assets/jeff.png';
+import User from '../../assets/jeff.JPG';
 
 class Cards extends Component {
 

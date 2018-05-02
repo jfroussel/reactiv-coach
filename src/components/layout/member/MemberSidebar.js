@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import * as routes from '../../../constants/AuthRoutes'
-
 
 class MemberSidebar extends Component {
 
@@ -14,15 +12,13 @@ class MemberSidebar extends Component {
         }
     }
 
-
     render() {
        
         return (
             <div className="list-group">
-                <Link to="/account" className={this.state.className}>Account</Link>
+                <Link to="/home-profile" className={this.state.className}>Home</Link>
                 <Link to="/profile" className={this.state.className}>Profile</Link>
-                <Link to="/messages" className={this.state.className}>Messages</Link>
-                <Link to="/analytic" className={this.state.className}>Analytic</Link>
+                <Link to="/network" className={this.state.className}>Network</Link>
             </div>
         )
     }

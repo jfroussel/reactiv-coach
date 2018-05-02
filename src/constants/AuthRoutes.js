@@ -12,8 +12,7 @@ export const HOME = '/'
  * Members constants
  */
 
-export const ACCOUNT = '/account'
+export const HOME_PROFILE = '/home-profile'
 export const PROFILE = '/profile'
-export const MESSAGES = '/messages'
-export const ANALYTIC = '/analytic'
+export const NETWORK = '/network'
 

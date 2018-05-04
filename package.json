@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.5",
+    "axios": "^0.18.0",
     "bootstrap": "^4.0.0",
     "firebase": "^4.12.1",
     "history": "^4.7.2",
@@ -23,7 +24,8 @@
     "react-scrollable-anchor": "^0.6.1",
     "react-star-rating-component": "^1.4.1",
     "redux": "^3.7.2",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

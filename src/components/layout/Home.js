@@ -7,6 +7,10 @@ import Contact from './Contact'
 import About from './About'
 import Works from './Works'
 import firebase from 'firebase'
+import MembersList from '../../containers/MembersList';
+import SearchBar  from '../../containers/SearchBar'
+
+
 
 class Home extends Component {
 
@@ -31,6 +35,9 @@ class Home extends Component {
                 <Navbar />
                 {!this.state.isLogged &&
                 <div>
+                    
+                    <MembersList />
+                    <SearchBar />
                     <Features />
                     <Developers />
                     <About />

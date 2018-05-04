@@ -1,8 +1,11 @@
 import { combineReducers } from 'redux'
-import signin from './signin'
-
+import MembersReducer from './reducer-members'
+import ActiveMember from './reducer-member-selected'
+import CountriesReducer from './reducer-countries'
 
 export default combineReducers({
-  signin,
+  members: MembersReducer,
+  activeMember: ActiveMember,
+  countries: CountriesReducer,
  
 })

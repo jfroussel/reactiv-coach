@@ -13,7 +13,7 @@ class MemberDetail extends Component {
                 <h3>{memberDetail.id}</h3>
                 <h3>{memberDetail.active}</h3>
             </div>
-        );
+        )
     }
 }
 

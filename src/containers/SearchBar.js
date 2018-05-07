@@ -8,6 +8,7 @@ class SearchBar extends Component {
     
     componentWillMount() {
         this.props.getCountries()
+        
     }
 
     renderSelect() {

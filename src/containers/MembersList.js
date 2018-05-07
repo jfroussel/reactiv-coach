@@ -6,7 +6,9 @@ import MemberDetail from './MemberDetail'
 
 
 class MembersList extends Component {
+
     render() {
+        console.log(this.props)
         return (
             <div>
                 <ul className="col-4">
@@ -27,7 +29,7 @@ class MembersList extends Component {
         );
     }
 }
-
+ 
 const mapStateToProps = (state) => {
     return {
         members:state.members,

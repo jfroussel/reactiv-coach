@@ -1,0 +1,3 @@
+get users by language * location
+
+https://api.github.com/search/users?q=language:reactjs+location:france

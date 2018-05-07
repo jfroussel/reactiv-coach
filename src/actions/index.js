@@ -17,6 +17,29 @@ export const getCountries = () => {
     }     
 }
 
+/* Github actions */
+export const GITHUB_GET_ALL = 'GITHUB_GET_ALL'
+export const ERROR_GITHUB_GET_ALL = 'ERROR_GITHUB_GET_ALL'
+
+export const getAllGithub = () => {
+    const url = 'https://api.github.com/search/users?q=language:reactjs+location:france'
+    return (dispatch) => {
+        axios(url).then((response) => {
+            dispatch({type: GITHUB_GET_ALL , payload: response.data.items})
+        }).catch((error) => {
+            dispatch({type: ERROR_GITHUB_GET_ALL, errors: 'errors'})
+        }) 
+    }
+}
+
+export const GITHUB_SELECTED = 'GITHUB_SELECTED'
+export const githubSelected = (user) => {
+    return {
+        type: GITHUB_SELECTED,
+        payload : user
+    }
+}
+
 /* Member actions */
 export const MEMBER_SELECTED = 'MEMBER_SELECTED'
 export const selectMember = (member) => {
@@ -25,4 +48,6 @@ export const selectMember = (member) => {
         payload: member,
     }
 }
+
+
 

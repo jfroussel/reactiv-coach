@@ -10,13 +10,18 @@ class Cards extends Component {
         this.props.getAllGithub()
     }
 
+    componentWillReceiveProps(nextProps) {
+        console.log(this.props)
+    }
+    
+
     
     cardList() {
-        const { githubs } = this.props
+        const { developers } = this.props
     
-        if (githubs) {
+        if (developers) {
             return (
-                githubs.map((user) => (
+                developers.map((user) => (
                     <div className="content pb-3 pl-5" key={user.id}>
                         <div className="card" >
                             <div className="firstinfo"><img src={user.avatar_url} alt="" />
@@ -47,13 +52,13 @@ class Cards extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        githubs: state.githubs,
+        developers: state.getAllGithub,
     }
 }
 
 
-const mapDispatchToProps = (dispatch) => ({
-    ...bindActionCreators({ getAllGithub }, dispatch),
-})
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({ getAllGithub }, dispatch)
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cards);

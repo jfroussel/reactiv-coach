@@ -1,46 +1,67 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getAllGithub, githubSelected } from '../actions'
 import { bindActionCreators } from 'redux'
-import UserGithub from './GithubDetail'
+import { getDevelopers, getCountries } from '../actions'
 
 
 class GithubList extends Component {
 
 
     componentWillMount() {
-        this.props.getAllGithub()
+        this.props.getDevelopers()
+        this.props.getCountries()
+    }
+
+    countriesList() {
+        const { pays } = this.props
+        return (
+            JSON.stringify(pays)
+        )
     }
 
     githubList() {
-        const { githubs } = this.props
-        if (githubs) {
+        const { devs } = this.props
+
+        if (devs) {
             return (
                 <div>
-                    <ul className="col-4">
-                        {
-                            githubs.map((user) => (
-                                <li className="list-group-item"
-                                    key={user.id}
-                                    onClick={() => this.props.githubSelected(user)}>
-                                    <img src={user.avatar_url} alt={user.login} width="50px" className="rounded-circle" />
-                                </li>
-                            ))
-                        }
-                    </ul>
+                    <table className="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td>avatar</td>
+                                <td>name</td>
+                                <td>login</td>
+                                <td>id</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                devs.map((dev) => {
+                                    return (
+                                        <tr key={ dev.login}>
+                                            <td><img src={dev.avatar_url} alt={dev.login} width="50px" className="rounded-circle" /></td>
+                                            <td>{ dev.name }</td>
+                                            <td>{ dev.login }</td>
+                                            <td>{ dev.id }</td>
+                                        </tr>
+                                    )
+                                }) 
+                            }
+                        </tbody>
+                    </table>
                 </div>
             );
         } else {
-            return <div>no github user found...</div>
+            return <div>no github developers found...</div>
         }
     }
 
 
     render() {
         return (
-            <div className="row">
-                <div className="col-md-6">{this.githubList()}</div>
-                <div className="col-md-6"> <UserGithub />   </div>
+            <div className="container">
+                {this.countriesList()}
+                {this.githubList()}
             </div>
         )
 
@@ -50,13 +71,14 @@ class GithubList extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        githubs: state.githubs,
+        devs: state.developers,
+        pays: state.countries,
     }
 }
 
 
-const mapDispatchToProps = (dispatch) => ({
-    ...bindActionCreators({ getAllGithub }, dispatch),
-})
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({ getDevelopers, getCountries }, dispatch)
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(GithubList)

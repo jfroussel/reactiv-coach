@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Cards from './Cards';
+import GithubList from '../../../containers/GithubList'
 import ScrollableAnchor, {   } from 'react-scrollable-anchor'
 
 
@@ -22,7 +22,7 @@ class Developers extends Component {
                         <div className="divider"></div>
                     </div>
                     <div className="row">
-                    <Cards />
+                    <GithubList />
                     </div>
                     
                 </section>

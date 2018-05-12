@@ -39,10 +39,10 @@ class Cover extends Component {
                         </h1>
                         <div className="row">
                             <div className="m-auto col-md-6 mt-5">
-                                <button type="submit" className="btn btn-lg btn-info pill-btn mt-5 font-weight-normal">{this.state.btnDev}</button>
+                                <a href="#developers" className="btn btn-lg btn-info pill-btn mt-5 font-weight-normal">{this.state.btnDev}</a>
                             </div>
                             <div className="m-auto col-md-6 mt-5">
-                                <button type="submit" className="btn btn-lg btn-info pill-btn mt-5 font-weight-normal">{this.state.btnFindDev}</button>
+                                <a href="#developers" className="btn btn-lg btn-info pill-btn mt-5 font-weight-normal">{this.state.btnFindDev}</a>
                             </div>
                         </div>
                     </div>

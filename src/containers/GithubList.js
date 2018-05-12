@@ -56,7 +56,7 @@ const mapStateToProps = (state) => {
 
 
 const mapDispatchToProps = (dispatch) => ({
-    ...bindActionCreators({ getAllGithub, githubSelected }, dispatch),
+    ...bindActionCreators({ getAllGithub }, dispatch),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(GithubList)

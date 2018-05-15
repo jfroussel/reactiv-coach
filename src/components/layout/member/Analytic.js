@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const Analytic = () => 
     <div className="card">
         <div className="card-body">

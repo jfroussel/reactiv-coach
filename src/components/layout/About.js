@@ -8,9 +8,6 @@ const About = () => (
             <h2 className="font-weight-light">About</h2>
             <p className="lead constrain-width mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. At aliquam rhoncus donec magna turpis, dictum sit amet tellus at, commodo elementum sapien.</p>
             <div className="divider"></div>
-            <div className="row">
-               
-            </div>
         </div>
     </section>
     </ScrollableAnchor>

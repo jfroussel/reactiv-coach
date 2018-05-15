@@ -1,0 +1,9 @@
+{
+    "workbench.colorCustomizations": {
+        "editor.background": "#f5f7f9",
+        "editorLineNumber.foreground":"#747171",
+        "terminal.background": "#272424",
+        "terminal.foreground": "#cecaca",
+    },
+    "git.ignoreLimitWarning": true
+}

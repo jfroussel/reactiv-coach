@@ -8,7 +8,6 @@ import AuthPage from './AuthPage'
 import MemberHome from './member/MemberHome'
 import { PrivateNavigation, PublicNavigation } from './Navigation'
 
-
 class Navbar extends Component {
 
     constructor(props) {
@@ -18,6 +17,7 @@ class Navbar extends Component {
             isLogged: false,
         }
     }
+
     componentWillMount() {
         firebase.auth().onAuthStateChanged((user) => {
             user ? this.setState({isLogged: true}) : this.setState({isLogged: false})
@@ -31,7 +31,6 @@ class Navbar extends Component {
             
         }) 
     }
-
 
     render() {
         

@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
-import GithubList from '../../../containers/GithubList'
-import ScrollableAnchor, {   } from 'react-scrollable-anchor'
-
+import DevelopersList from '../../../containers/DevelopersList'
+import ScrollableAnchor from 'react-scrollable-anchor'
 
 class Developers extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-
-        }
-    }
-
     render() {
         return (
+            <div>
             <ScrollableAnchor id={'developers'}>
                 <section className="features-1 text-center">
                     <div className="container">
@@ -22,11 +15,11 @@ class Developers extends Component {
                         <div className="divider"></div>
                     </div>
                     <div className="row">
-                    <GithubList />
+                    <DevelopersList />
                     </div>
-                    
                 </section>
             </ScrollableAnchor>
+            </div>
         )
     }
 }

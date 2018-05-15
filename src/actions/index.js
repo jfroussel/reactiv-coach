@@ -19,8 +19,9 @@ export const getCountries = () => {
 export const GITHUB_GET_ALL = 'GITHUB_GET_ALL'
 export const ERROR_GITHUB_GET_ALL = 'ERROR_GITHUB_GET_ALL'
 
-export const getDevelopers = () => {
-    const url = 'https://api.github.com/search/users?q=language:reactjs+location:france'
+export const getDevelopers = (country) => {
+    country = 'France'
+    const url = 'https://api.github.com/search/users?q=language:reactjs+location:' + country
     const userURL = 'https://api.github.com/users/'
     const users = []
 
@@ -38,8 +39,6 @@ export const getDevelopers = () => {
     }
 }
 
-
-
 export const GITHUB_SELECTED = 'GITHUB_SELECTED'
 export const githubSelected = (user) => {
     return {
@@ -48,14 +47,6 @@ export const githubSelected = (user) => {
     }
 }
 
-/* Member actions */
-export const MEMBER_SELECTED = 'MEMBER_SELECTED'
-export const selectMember = (member) => {
-    return {
-        type: MEMBER_SELECTED,
-        payload: member,
-    }
-}
 
 
 

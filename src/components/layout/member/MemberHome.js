@@ -7,7 +7,6 @@ import Profile from './Profile'
 import Network from './Network'
 import MemberSidebar from './MemberSidebar'
 
-
 class MemberHome extends Component {
 
     constructor(props) {
@@ -38,17 +37,14 @@ class MemberHome extends Component {
                         <Route 
                             exact path={routes.HOME_PROFILE}
                             component={() => <Home />}
-                                 
                         />
                         <Route 
                             exact path={routes.PROFILE}
                             component={() => <Profile />}
-                                 
                         />
                         <Route 
                             exact path={routes.NETWORK}
                             component={() => <Network />}
-                                 
                         />
                         </div>
                     </div>
@@ -56,7 +52,6 @@ class MemberHome extends Component {
             </Router>
         )
     }
-
 }
 
 export default MemberHome

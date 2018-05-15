@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const Network = () =>
     <div className="card">
         <div className="card-body">

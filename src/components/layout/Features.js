@@ -10,7 +10,7 @@ class Features extends Component {
 
         }
     }
-s
+
     render() {
 
         return (

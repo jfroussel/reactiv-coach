@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import firebase from 'firebase'
 
-
 class Home extends Component {
 
     constructor(props) {
@@ -21,8 +20,6 @@ class Home extends Component {
             this.setState({isLogged: false})
         }
     }
-
-    
 
     render() {
         const user = this.state.user

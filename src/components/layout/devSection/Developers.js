@@ -13,9 +13,7 @@ class Developers extends Component {
                         <h2 className="font-weight-light">Dev profils</h2>
                         <p className="lead constrain-width mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. At aliquam rhoncus donec magna turpis, dictum sit amet tellus at, commodo elementum sapien.</p>
                         <div className="divider"></div>
-                    </div>
-                    <div className="row">
-                    <DevelopersList />
+                        <DevelopersList />
                     </div>
                 </section>
             </ScrollableAnchor>

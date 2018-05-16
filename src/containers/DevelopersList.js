@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getDevelopers } from '../actions'
 import { bindActionCreators } from 'redux'
-import SearchDevelopers from '../components/layout/devSection/SearchDevelopers'
+import SearchDevelopers from './SearchDevelopers'
 
 class DevelopersList extends Component {
 
@@ -46,7 +46,7 @@ class DevelopersList extends Component {
                     <SearchDevelopers />
                 </div>
                 <div className="container">
-                    {this.developersList()}
+                   { this.developersList()}
                 </div>
             </div>
         )

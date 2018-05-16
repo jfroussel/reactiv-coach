@@ -1,6 +1,6 @@
 import { GET_COUNTRIES, ERROR_GET_COUNTRIES} from '../actions'
 
-export default function(state = null, action) {
+export default function(state = [], action) {
     switch(action.type) {
         case GET_COUNTRIES :
             return action.payload

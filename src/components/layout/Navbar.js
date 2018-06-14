@@ -20,22 +20,28 @@ class Navbar extends Component {
 
     componentWillMount() {
         firebase.auth().onAuthStateChanged((user) => {
-            user ? this.setState({isLogged: true}) : this.setState({isLogged: false})
-            
+            user ? this.setState({ isLogged: true }) : this.setState({ isLogged: false })
+
         });
     }
 
     componentWillReceiveProps() {
         firebase.auth().onAuthStateChanged((user) => {
-            user ? this.setState({isLogged: true}) : this.setState({isLogged: false})
-            
-        }) 
+            user ? this.setState({ isLogged: true }) : this.setState({ isLogged: false })
+
+        })
     }
 
+
+
     render() {
-        
+
+        const handleClick = (e) => {
+            window.scrollTo(0,0);
+        }
+
         return (
-           
+
             <ScrollableAnchor id={'home'}>
                 <section className="cover-5 text-center">
                     <nav className="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
@@ -64,10 +70,11 @@ class Navbar extends Component {
                                         <li className="nav-item">
                                             <a
                                                 className="nav-link text-info"
-                                                href=""
+                                                href="#home"
                                                 data-toggle="collapse"
                                                 data-target="#collapse"
                                                 aria-expanded="false"
+                                                onClick={handleClick}
                                             >Sign in</a>
                                         </li>
                                         :
@@ -97,7 +104,7 @@ class Navbar extends Component {
                     </div>
                     <div>
                         {!this.state.isLogged ? <Cover /> : <MemberHome />}
-                    </div>    
+                    </div>
                 </section>
             </ScrollableAnchor>
         )
